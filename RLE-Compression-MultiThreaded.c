@@ -75,21 +75,19 @@ tempchar = filemapped[0] ;
 		else{
 
 	   		if(rlecharcount==0){
-
-	   				rlestring = (char**)calloc((rlecharcount+1),sizeof(char*));
-		  			rlestring[rlecharcount] = (char*)calloc(2,sizeof(char));
-		  			rlestring[rlecharcount][0] = tempchar ;
-		  			rlestring[rlecharcount][1] = charcount ;
-		  			rlecharcount+=1;	
+   				rlestring = (char**)calloc((rlecharcount+1),sizeof(char*));
+	  			rlestring[rlecharcount] = (char*)calloc(2,sizeof(char));
+	  			rlestring[rlecharcount][0] = tempchar ;
+	  			rlestring[rlecharcount][1] = charcount ;
+	  			rlecharcount+=1;	
 	   		}
 
 	   		else{
-
-		   			rlestring = (char**)realloc(rlestring,(rlecharcount+1)*sizeof(char*));
-		  			rlestring[rlecharcount] = (char*)calloc(2,sizeof(char));
-		  			rlestring[rlecharcount][0] = tempchar ;
-		  			rlestring[rlecharcount][1] = charcount ;
-		 			rlecharcount+=1;
+	   			rlestring = (char**)realloc(rlestring,(rlecharcount+1)*sizeof(char*));
+	  			rlestring[rlecharcount] = (char*)calloc(2,sizeof(char));
+	  			rlestring[rlecharcount][0] = tempchar ;
+	  			rlestring[rlecharcount][1] = charcount ;
+	 			rlecharcount+=1;
 	   		}
 	  			
 	   		tempchar = filemapped[km];
@@ -98,7 +96,6 @@ tempchar = filemapped[0] ;
 
 	}	
 		if(rlecharcount==0){
-
 			rlestring = (char**)calloc((rlecharcount+1),sizeof(char*));
   			rlestring[rlecharcount] = (char*)calloc(2,sizeof(char));
   			rlestring[rlecharcount][0] = tempchar ;
@@ -107,13 +104,12 @@ tempchar = filemapped[0] ;
 		}
 
 	 	else {
-
 			rlestring = (char**)realloc(rlestring,(rlecharcount+1)*sizeof(char*));
 			rlestring[rlecharcount] = (char*)calloc(2,sizeof(char));
 			rlestring[rlecharcount][0] = tempchar ;
 			rlestring[rlecharcount][1] = charcount ;
 			rlecharcount+=1;
-			}
+		}
 
 		threadrlestringtemp[(task->taskindex)-1] = (char*)calloc(2*rlecharcount+1,sizeof(char));
 
@@ -143,16 +139,12 @@ tempchar = filemapped[0] ;
 				}
 
 				else{
-					 threadrlestringfinalcount += 2*threadrlecharcount[cnt-1];
-					
-				fprintf(stdout,"%.*s",2*threadrlecharcount[cnt-1],threadrlestringtemp[cnt-1]);		
-
+					threadrlestringfinalcount += 2*threadrlecharcount[cnt-1];
+					fprintf(stdout,"%.*s",2*threadrlecharcount[cnt-1],threadrlestringtemp[cnt-1]);	
 				}
 			}
 				threadrlestringfinalcount += 2*threadrlecharcount[nooftasks-1];
-				
 				fprintf(stdout,"%.*s",2*threadrlecharcount[nooftasks-1],threadrlestringtemp[nooftasks-1]);		
-
 		 	exit(0);
 		 }
 		}
