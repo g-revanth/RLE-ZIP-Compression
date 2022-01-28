@@ -1,7 +1,7 @@
 # RLE-ZIP-Compression
 
-Please use these flags while compiling :
-CFLAGS=-w -pthread
+Please use these flags while compiling :      
+CFLAGS=-w -pthread      
 LDFLAGS=-lpthread
 
 USAGE :
