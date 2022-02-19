@@ -194,8 +194,8 @@ int main(int argc, char **argv) {
 
 	pthread_mutex_init(&mutextaskqueue, NULL);
 	pthread_mutex_init(&mutexresult, NULL);
-    pthread_cond_init(&condtaskqueue, NULL);
-    pthread_cond_init(&condresult, NULL);
+    	pthread_cond_init(&condtaskqueue, NULL);
+    	pthread_cond_init(&condresult, NULL);
 
 	int option;
 	int numthreads = 0;
